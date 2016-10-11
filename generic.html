@@ -1,0 +1,11 @@
+<div ng-switch=view>
+	<div ng-switch-when="loading" view-loading></div>
+	<div ng-switch-when="no data" view-no-data></div>
+	<div ng-switch-when="error" view-failed></div>
+	<div ng-switch-when="done">
+		<div ng-show="!gridView" id="chart" style="height:100%"></div>
+		<div ng-if="gridView">
+			<generic-data-table data=chartData fields=genFields columns=genColumns></generic-data-table>
+		</div>
+	</div>
+</div>
